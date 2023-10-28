@@ -107,3 +107,12 @@ control 'package-09' do
     it { should_not be_installed }
   end
 end
+
+control 'package-10' do
+  impact 1.0
+  title 'Check for Antivirus Software'
+  desc 'Ensure antivirus software is installed on the system.'
+  describe package('my-antivirus-package-name') do
+    it { should be_installed }
+  end
+end
